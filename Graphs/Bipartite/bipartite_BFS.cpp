@@ -85,15 +85,9 @@ int main() {
     for (int i = 0; i < edges; i++) {
         cin >> u >> v;
 
-        // NOTE: This only adds u -> v, making it a DIRECTED adjacency list.
         // Bipartite checking conceptually assumes an UNDIRECTED graph
-        // (if u and v are adjacent, that adjacency should apply both ways).
-        // If the input is meant to be undirected, you'd also need:
-        // Adj[v].push_back(u);
-        // As-is, this works only if edges happen to be listed such that
-        // traversal still reaches all relevant nodes, or if the graph
-        // truly is meant to be directed for this use case.
         Adj[u].push_back(v);
+        Adj[v].push_back(u);
     }
 
     // Print adjacency list (just for visualization/debugging)
