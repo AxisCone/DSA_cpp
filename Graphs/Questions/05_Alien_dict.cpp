@@ -153,11 +153,13 @@ string find_order(string dict[], int N, int K) {
     */
     for (int i = 0; i < N; i++) {
 
-        for (char c : dict[i]) {
+    for (int j = 0; j < dict[i].size(); j++) {
 
-            present[c - 'a'] = true;
-        }
+        char c = dict[i][j];
+
+        present[c - 'a'] = true;
     }
+}
 
 
     /*
