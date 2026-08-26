@@ -7,6 +7,9 @@ public:
     int modelYear;
     int price;
 
+    Car(){
+
+    }
    
     // Parameterized Constructor (3 parameters)
     Car(string brand, int modelYear, int price) {
@@ -45,6 +48,9 @@ int main() {
     Car E(D);       // calls copy constructor
     E.Display();
 
+    Car F;
+    F=E;     // can copy using assignment(=) operator
+    F.Display();
 
     return 0;
 }

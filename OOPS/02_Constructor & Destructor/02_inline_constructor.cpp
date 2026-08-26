@@ -16,7 +16,7 @@ class Human{
     }
 
     //Inline Constructor Constructor (3 parameters)
-    inline Human(string gender,int age,int IQ):gender(gender),age(age),IQ(IQ){
+    inline Human(string Gender,int age,int IQ):gender(Gender),age(age),IQ(IQ){
         
     }
 

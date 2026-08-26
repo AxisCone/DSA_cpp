@@ -24,7 +24,7 @@ class Human{
     }
 
      // Parameterized Constructor (2 parameters)
-    Human(string gender,int age){
+    Human(string gender,int IQ){
         this->gender = gender;
         this->age = age;
         IQ = 121;
