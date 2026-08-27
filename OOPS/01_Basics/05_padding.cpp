@@ -1,63 +1,71 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-// Eg.1
-class a
+// ==================== Example 1 ====================
+class A
 {
-    char c;
-    int b;
-    char d;
+    char c;   // 1 byte
+    int b;    // 4 bytes
+    char d;   // 1 byte
+
+    // Memory layout:
+    // c  p  p  p  b  b  b  b  d  p  p  p
+    // Total = 12 bytes
 };
+
+
+// ==================== Example 2 ====================
+class B
+{
+    char c;   // 1 byte
+    char d;   // 1 byte
+    int b;    // 4 bytes
+
+    // Memory layout:
+    // c  d  p  p  b  b  b  b
+    // Total = 8 bytes
+};
+
+
+// ==================== Example 3 ====================
+class C
+{
+    char c;     // 1 byte
+    char d;     // 1 byte
+    int b;      // 4 bytes
+    double e;   // 8 bytes
+
+    // Memory layout:
+    // c  d  b  b  b  b  p  p  e  e  e  e  e  e  e  e
+    // Total = 16 bytes
+};
+
+
+// ==================== Example 4 ====================
+class D
+{
+    char c;     // 1 byte
+    int b;      // 4 bytes
+    char d;     // 1 byte
+    double e;   // 8 bytes
+
+    // Memory layout:
+    // c  p  p  p  b  b  b  b  d  p  p  p  e e e e e e e e
+    // Total = 24 bytes
+};
+
 
 int main()
 {
-    a obj;
-    cout<<sizeof(obj)<<" "; //12 Output
-}
+    A obj1;
+    B obj2;
+    C obj3;
+    D obj4;
 
-// Eg.2
-class a
-{
-    char c;
-    char d;
-    int b;
-};
+    cout << "Example 1: " << sizeof(obj1) << " bytes" << endl;
+    cout << "Example 2: " << sizeof(obj2) << " bytes" << endl;
+    cout << "Example 3: " << sizeof(obj3) << " bytes" << endl;
+    cout << "Example 4: " << sizeof(obj4) << " bytes" << endl;
 
-int main()
-{
-    a obj;
-    cout<<sizeof(obj)<<" "; //8 Output
-}
-
-//Eg.3
-class a
-{
-    char c;
-    char d;
-    int b;
-    double e;
-    // c d p p b b b b e e e e e e e e
-};
-
-int main()
-{
-    a obj;
-    cout<<sizeof(obj)<<" "; //16 Output (2 Padding)
-}
-
-//Eg.4
-class a
-{
-    char c;
-    int b;
-    char d;
-    double e;
-    // c p p p b b b b d p p p e e e e e e e e
-    // p = padding
-};
-
-int main()
-{
-    a obj;
-    cout<<sizeof(obj)<<" "; //24 Output
+    return 0;
 }
