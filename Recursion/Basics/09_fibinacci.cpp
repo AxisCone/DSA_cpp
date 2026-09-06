@@ -1,8 +1,20 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
+int fibo(int n) {
+    if(n==0) return 0;
+    if(n==1) return 1;
 
+    return fibo(n-1)+fibo(n-2);
+}
 
-    
+int main() {
+    int n;
+    cout << "Enter term till where fibonacci number is needed: ";
+    cin >> n;
+
+    int ans = fibo(n);
+    cout << ans;
+
+    return 0;
 }
