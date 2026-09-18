@@ -67,7 +67,7 @@ int main(){
 
     // want to print "word" in double quotes , use escape sequence (e.g \"Notorious\")
 
-    //string s = "He made a \"heroic\" and \"vallant\" effort to win the game.";
+    //string s = "He made a \"heroic\" and \"vallant\" effort to save her.";
    // cout << s << endl;
    
 
